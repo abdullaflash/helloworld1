@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
+import { ChildComponent } from "../child/child.component";
 
 @Component({
   selector: 'app-parent',
@@ -18,5 +19,13 @@ export class ParentComponent  {
     
   }
 
-  
+  @ViewChild(ChildComponent) child: ChildComponent;
+
+  increment() {
+    this.child.increment();
+  }
+
+  decrement() {
+    this.child.decrement();
+  }
 }

@@ -1,4 +1,9 @@
 
 <child-component name="i am from parent" (shareDataToParent) = shareDataToParent($event)>
- 
+
 </child-component> {{sharedText}}
+
+<button (click)="increment()">Increment</button>   
+        <button (click)="decrement()">decrement</button>
+
+        <p> Child count is {{child.count}} </p>

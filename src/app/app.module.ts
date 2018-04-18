@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { MyComponentComponent } from './my-component/my-component.component';
@@ -21,6 +21,10 @@ import { BranchTwoComponent } from './birlasoft-chennai/branch-two/branch-two.co
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { FontXDirective } from './font-x.directive';
+import { ClockComponent } from './clock/clock/clock.component';
+import { DotComponent } from './clock/dot/dot.component';
+import { NumberComponent } from './clock/number/number.component';
+
 
 
 
@@ -40,10 +44,14 @@ import { FontXDirective } from './font-x.directive';
     ParentComponent,
     ChildComponent,
     FontXDirective,
+    ClockComponent,
+    DotComponent,
+    NumberComponent,
+    
     
     
   ],
-  imports: [BrowserModule, FormsModule,HttpModule,routing,ReactiveFormsModule],
+  imports: [NgbModule.forRoot(),BrowserModule, FormsModule,HttpModule,routing,ReactiveFormsModule],
   providers: [DataService,HttpServiceService],
   bootstrap: [AppComponent]
 })

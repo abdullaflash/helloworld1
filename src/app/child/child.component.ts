@@ -24,4 +24,13 @@ export class ChildComponent {
   shareData(){
       this.shareDataToParent.emit(this.title);
   }
+
+  count = 0;
+
+     increment() {
+        this.count++;
+      }
+    decrement() {
+        this.count--;
+    }
 }
