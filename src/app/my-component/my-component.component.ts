@@ -4,13 +4,17 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-my-component',
-  template: `
-        <h1>Text ({{textValue}})</h1>
-        <input #textbox type="text" [(ngModel)]="textValue" required>
-        <button (click)="logText(textbox.value)">Update Log</button>
-        <button (click)="textValue=''">Clear</button>
-        <h2>Log <button (click)="log=''">Clear</button></h2>
-        <pre>{{log}}</pre>`
+  template: `<p class="optional"> my code</p>
+       `,
+       styles:[`.required{
+        color: green;
+        font-size: 30px;
+    }
+    .optional {
+        color: red;
+        background-color: cyan;
+        font-family: cursive;
+    } `]
 })
 export class MyComponentComponent {
 

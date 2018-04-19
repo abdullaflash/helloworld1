@@ -24,6 +24,7 @@ import { FontXDirective } from './font-x.directive';
 import { ClockComponent } from './clock/clock/clock.component';
 import { DotComponent } from './clock/dot/dot.component';
 import { NumberComponent } from './clock/number/number.component';
+import { HighlightDirective } from './highlight.directive';
 
 
 
@@ -47,6 +48,7 @@ import { NumberComponent } from './clock/number/number.component';
     ClockComponent,
     DotComponent,
     NumberComponent,
+    HighlightDirective,
     
     
     
