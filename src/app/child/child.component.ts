@@ -2,14 +2,16 @@ import { Component,Input,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'child-component',
-  template: `
+  
+  templateUrl:'./child.component.html',
+  /*template: `
   <div>
       <span>Child Component: </span>
       <span>{{name}}</span><br>
       <button (click)="shareData()">Share data to parent</button>
 
     </div>
-  `
+  `*/
 })
 export class ChildComponent {
  

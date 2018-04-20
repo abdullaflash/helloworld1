@@ -13,7 +13,7 @@ import { DataService } from './data.service';
 import { HttpServiceService } from './http-service.service';
 import { HttpModule } from '@angular/http';
 
-import { routing } from './app.route';
+//import { routing } from './app.route';
 import { BirlasoftChennaiComponent } from './birlasoft-chennai/birlasoft-chennai.component';
 import { BirlasoftNoidaComponent } from './birlasoft-noida/birlasoft-noida.component';
 import { BranchOneComponent } from './birlasoft-chennai/branch-one/branch-one.component';
@@ -28,10 +28,23 @@ import { HighlightDirective } from './highlight.directive';
 
 
 
+import { RouterModule, Routes } from '@angular/router';
 
+const routes: Routes = [
+  { path: '', component: BirlasoftNoidaComponent, },
+  { path: 'birlasoft-noida', component: BirlasoftNoidaComponent, },
+  { path: 'app-clock', component: ClockComponent,},
+  { path: 'birlasoft-chennai', component: BirlasoftChennaiComponent,
 
+  children: [
+      { path: 'branch-one', component: BranchOneComponent },
+      { path: 'branch-two', component: BranchTwoComponent }
+    ]
 
-
+  },
+  { path: '**', redirectTo: '' }
+];
+export const routing = RouterModule.forRoot(routes);
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,8 +66,11 @@ import { HighlightDirective } from './highlight.directive';
     
     
   ],
-  imports: [NgbModule.forRoot(),BrowserModule, FormsModule,HttpModule,routing,ReactiveFormsModule],
+ 
+
+  imports: [NgbModule.forRoot(),routing, FormsModule,HttpModule,ReactiveFormsModule],
   providers: [DataService,HttpServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
